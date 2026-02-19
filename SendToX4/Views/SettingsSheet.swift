@@ -100,7 +100,7 @@ struct SettingsSheet: View {
             }
         }
         #if os(macOS)
-        .frame(minWidth: 500, minHeight: 600)
+        .frame(width: 600, height: 700)
         #endif
     }
     
@@ -364,7 +364,7 @@ struct SettingsSheet: View {
 
     private var aboutSection: some View {
         Section {
-            LabeledContent(loc(.version), value: "1.0")
+            LabeledContent(loc(.version), value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "2.0")
             LabeledContent(loc(.epubFormat), value: "EPUB 2.0")
 
             Button {
