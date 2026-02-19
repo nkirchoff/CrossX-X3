@@ -28,6 +28,59 @@ struct SettingsSheet: View {
     @Environment(\.openURL) private var openURL
 
     var body: some View {
+        #if os(macOS)
+        TabView {
+            Form {
+                languageSection
+                featureFoldersSection
+                feedbackSection
+                aboutSection
+            }
+            .tabItem { Label("General", systemImage: "gear") }
+            .tag(0)
+
+            Form {
+                deviceSection
+                connectionTestSection
+            }
+            .tabItem { Label("Connection", systemImage: "network") }
+            .tag(1)
+
+            Form {
+                storageSection
+            }
+            .tabItem { Label("Storage", systemImage: "internaldrive") }
+            .tag(2)
+        }
+        .frame(width: 500, height: 400) // Fixed size for tabbed preferences
+        .padding()
+        .task { refreshStorageSizes() }
+        .onChange(of: settings.appLanguage) { _, newLang in LocalizationManager.shared.currentLanguage = newLang }
+        .alert(loc(.clearHistoryDataTitle), isPresented: $showClearHistoryConfirm) {
+            Button(loc(.clearHistory), role: .destructive) { clearHistoryData() }
+            Button(loc(.cancel), role: .cancel) {}
+        } message: { Text(loc(.clearHistoryDataMessage)) }
+        .alert(loc(.clearWebCacheTitle), isPresented: $showClearCacheConfirm) {
+            Button(loc(.clearCache), role: .destructive) { clearWebCache() }
+            Button(loc(.cancel), role: .cancel) {}
+        } message: { Text(loc(.clearWebCacheMessage)) }
+        .alert(loc(.clearEPUBQueueTitle), isPresented: $showClearQueueConfirm) {
+            Button(loc(.clearQueue), role: .destructive) { clearQueue() }
+            Button(loc(.cancel), role: .cancel) {}
+        } message: { Text(loc(.clearEPUBQueueMessage, queueItems.count)) }
+        .alert(loc(.clearDebugLogsTitle), isPresented: $showClearLogsConfirm) {
+            Button(loc(.clearDebugLogs), role: .destructive) { DebugLogger.shared.clearAll() }
+            Button(loc(.cancel), role: .cancel) {}
+        } message: { Text(loc(.clearDebugLogsMessage)) }
+        .alert(loc(.reportBugTitle), isPresented: $showReportBugAlert) {
+            Button(loc(.copyLogsAndReport)) {
+                copyBugReportToClipboard()
+                openURL(Self.githubIssuesURL)
+            }
+            Button(loc(.reportWithoutLogs)) { openURL(Self.githubIssuesURL) }
+            Button(loc(.cancel), role: .cancel) {}
+        } message: { Text(loc(.reportBugMessage)) }
+        #else
         NavigationStack {
             Form {
                 languageSection
@@ -39,70 +92,17 @@ struct SettingsSheet: View {
                 storageSection
                 aboutSection
             }
-            #if os(macOS)
-            .frame(width: 600, height: 700)
-            #endif
-        .navigationTitle(loc(.settings))
-            #if os(iOS)
+            .navigationTitle(loc(.settings))
             .navigationBarTitleDisplayMode(.inline)
-            #endif
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(loc(.done)) { dismiss() }
                 }
             }
-            .task {
-                refreshStorageSizes()
-            }
-            .onChange(of: settings.appLanguage) { _, newLang in
-                LocalizationManager.shared.currentLanguage = newLang
-            }
-            .alert(loc(.clearHistoryDataTitle), isPresented: $showClearHistoryConfirm) {
-                Button(loc(.clearHistory), role: .destructive) {
-                    clearHistoryData()
-                }
-                Button(loc(.cancel), role: .cancel) {}
-            } message: {
-                Text(loc(.clearHistoryDataMessage))
-            }
-            .alert(loc(.clearWebCacheTitle), isPresented: $showClearCacheConfirm) {
-                Button(loc(.clearCache), role: .destructive) {
-                    clearWebCache()
-                }
-                Button(loc(.cancel), role: .cancel) {}
-            } message: {
-                Text(loc(.clearWebCacheMessage))
-            }
-            .alert(loc(.clearEPUBQueueTitle), isPresented: $showClearQueueConfirm) {
-                Button(loc(.clearQueue), role: .destructive) {
-                    clearQueue()
-                }
-                Button(loc(.cancel), role: .cancel) {}
-            } message: {
-                Text(loc(.clearEPUBQueueMessage, queueItems.count))
-            }
-            .alert(loc(.clearDebugLogsTitle), isPresented: $showClearLogsConfirm) {
-                Button(loc(.clearDebugLogs), role: .destructive) {
-                    DebugLogger.shared.clearAll()
-                }
-                Button(loc(.cancel), role: .cancel) {}
-            } message: {
-                Text(loc(.clearDebugLogsMessage))
-            }
-            .alert(loc(.reportBugTitle), isPresented: $showReportBugAlert) {
-                Button(loc(.copyLogsAndReport)) {
-                    copyBugReportToClipboard()
-                    openURL(Self.githubIssuesURL)
-                }
-                Button(loc(.reportWithoutLogs)) {
-                    openURL(Self.githubIssuesURL)
-                }
-                Button(loc(.cancel), role: .cancel) {}
-            } message: {
-                Text(loc(.reportBugMessage))
-            }
+            .task { refreshStorageSizes() }
+            .onChange(of: settings.appLanguage) { _, newLang in LocalizationManager.shared.currentLanguage = newLang }
         }
-
+        #endif
     }
     
 
