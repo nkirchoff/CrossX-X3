@@ -74,6 +74,11 @@ struct SendToX4App: App {
             }
         }
         .modelContainer(sharedModelContainer)
+        #if os(macOS)
+        .commands {
+            CommandGroup(replacing: .newItem) {} // Remove "New Window" (single-window app)
+        }
+        #endif
     }
 }
 

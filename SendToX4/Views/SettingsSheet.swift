@@ -388,8 +388,8 @@ struct SettingsSheet: View {
         }
     }
 
-    private static let githubIssuesURL = URL(string: "https://github.com/jtvargas/crosspoint-app/issues/new/choose")!
-    private static let githubCodeURL = URL(string: "https://github.com/jtvargas/crosspoint-app")!
+    private static let githubIssuesURL = URL(string: "https://github.com/nkirchoff/CrossX-X3/issues/new/choose")!
+    private static let githubCodeURL = URL(string: "https://github.com/nkirchoff/CrossX-X3")!
 
     // MARK: - About Section
 

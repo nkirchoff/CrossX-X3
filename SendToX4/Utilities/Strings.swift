@@ -721,7 +721,7 @@ enum L10n {
 
         // Queue Duplicate Prevention
         .urlAlreadyQueued: "This URL is already in the send queue.",
-        .intentAlreadyQueued: "This URL is already in the queue. It will be sent when your X4 connects.",
+        .intentAlreadyQueued: "This URL is already in the queue. It will be sent when your X3 connects.",
 
         // ConvertViewModel Messages
         .enterValidURL: "Please enter a valid URL.",
@@ -821,8 +821,8 @@ enum L10n {
         .contentTooShort: "Content too short",
         .couldNotExtractURL: "Could not extract a URL from the shared content.",
         .couldNotExtractContent: "Could not extract enough content from this page.",
-        .connectingToX4: "Connecting to X4...",
-        .sentToX4: "Sent to X4!",
+        .connectingToX4: "Connecting to X3...",
+        .sentToX4: "Sent to X3!",
         .epubSaved: "EPUB saved",
         .x4NotConnectedLocalEPUB: "X3 not connected. EPUB file created locally.",
 
