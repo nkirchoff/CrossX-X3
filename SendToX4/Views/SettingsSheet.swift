@@ -99,7 +99,11 @@ struct SettingsSheet: View {
                 Text(loc(.reportBugMessage))
             }
         }
+        #if os(macOS)
+        .frame(minWidth: 500, minHeight: 600)
+        #endif
     }
+    
 
     // MARK: - Language Section
     private var languageSection: some View {
