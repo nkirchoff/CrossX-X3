@@ -928,7 +928,7 @@ enum L10n {
         .sendingPercent: "发送中 %d%%",
         .recent: "最近",
         .seeAll: "查看全部",
-        .resendToX4: "重新发送到X3",
+        .resendToX3: "重新发送到X3",
         .reconvertAndShare: "重新转换并分享",
         .copyURL: "复制链接",
         .untitled: "无标题",

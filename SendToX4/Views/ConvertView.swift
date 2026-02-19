@@ -366,7 +366,7 @@ struct ConvertView: View {
                         )
                     }
                 } label: {
-                    Label(loc(.resendToX4), systemImage: "paperplane")
+                    Label(loc(.resendToX3), systemImage: "paperplane")
                 }
             }
 
