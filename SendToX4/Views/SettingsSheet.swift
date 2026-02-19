@@ -29,7 +29,19 @@ struct SettingsSheet: View {
 
     var body: some View {
         #if os(macOS)
-        TabView {
+        VStack(spacing: 0) {
+            HStack {
+                Text(loc(.settings))
+                    .font(.headline)
+                Spacer()
+                Button(loc(.done)) { dismiss() }
+                    .keyboardShortcut(.defaultAction)
+            }
+            .padding(.horizontal)
+            .padding(.top, 12)
+            .padding(.bottom, 4)
+
+            TabView {
             ScrollView {
                 Form {
                     languageSection
@@ -69,7 +81,8 @@ struct SettingsSheet: View {
             .tabItem { Label("About", systemImage: "info.circle") }
             .tag(3)
         }
-        .frame(width: 520, height: 480)
+        } // end VStack
+        .frame(width: 520, height: 500)
         .padding()
         .task { refreshStorageSizes() }
         .onChange(of: settings.appLanguage) { _, newLang in LocalizationManager.shared.currentLanguage = newLang }
