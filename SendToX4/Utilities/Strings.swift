@@ -29,7 +29,7 @@ enum L10n {
         case sendingPercent
         case recent
         case seeAll
-        case resendToX4
+        case resendToX3
         case reconvertAndShare
         case copyURL
         case untitled
@@ -472,7 +472,7 @@ enum L10n {
         .sendQueuedFilesTitle: "Send Queued Files?",
         .sendAllCount: "Send All (%d)",
         .later: "Later",
-        .sendQueuedFilesMessage: "You have %d EPUB(s) queued. Send them to X4 now?",
+        .sendQueuedFilesMessage: "You have %d EPUB(s) queued. Send them to X3 now?",
 
         // Convert View
         .enterWebpageURL: "Enter webpage URL",
@@ -482,7 +482,7 @@ enum L10n {
         .sendingPercent: "Sending %d%%",
         .recent: "Recent",
         .seeAll: "See All",
-        .resendToX4: "Resend to X4",
+        .resendToX3: "Resend to X3",
         .reconvertAndShare: "Reconvert & Share",
         .copyURL: "Copy URL",
         .untitled: "Untitled",
@@ -532,7 +532,7 @@ enum L10n {
         .emptyFolderDescription: "This directory is empty. Tap + to add files or create folders.",
         .itemCount: "%d item(s)",
         .notConnected: "Not Connected",
-        .connectToDeviceToManage: "Connect to your X4 device to browse and manage files.",
+        .connectToDeviceToManage: "Connect to your X3 device to browse and manage files.",
         .loadingFiles: "Loading files...",
         .uploading: "Uploading...",
         .couldNotAccessFile: "Could not access the selected file.",
@@ -550,7 +550,7 @@ enum L10n {
         .failedToDeleteFolderRecursive: "Failed to fully delete folder '%@' from %@: %d of %d item(s) deleted",
         .stopDelete: "Stop",
         .deleteStopped: "Stopped — %d of %d item(s) deleted",
-        .fileManagerDeviceNote: "The X4 e-reader has limited WiFi performance. Uploads and bulk operations like deleting folders may take longer or occasionally fail — this is a device limitation, not an app issue. The app retries automatically.",
+        .fileManagerDeviceNote: "The X3 e-reader has limited WiFi performance. Uploads and bulk operations like deleting folders may take longer or occasionally fail — this is a device limitation, not an app issue. The app retries automatically.",
         .fileListSummary: "%d folder(s), %d file(s), %@",
         .fileListSummaryNoFiles: "%d folder(s), %d file(s)",
 
@@ -600,7 +600,7 @@ enum L10n {
         .siriShortcut: "Siri Shortcut",
         .siriShortcutDescription: "Convert web pages to EPUB directly from the Share menu using a Siri Shortcut and add it to the Queue",
         .openShortcutsApp: "Open Shortcuts App",
-        .siriShortcutFooter: "The shortcut converts pages in the background and queues them for sending when your X4 connects.",
+        .siriShortcutFooter: "The shortcut converts pages in the background and queues them for sending when your X3 connects.",
         .storage: "Storage",
         .database: "Database",
         .webCache: "Web Cache",
@@ -660,20 +660,20 @@ enum L10n {
         .next: "Next",
         .skip: "Skip",
         .welcomeTitle: "Welcome to CrossX",
-        .welcomeDescription: "Convert any web page to EPUB and send it to your Xteink X4 e-reader — no cloud, no accounts, just WiFi.",
+        .welcomeDescription: "Convert any web page to EPUB and send it to your Xteink X3 e-reader — no cloud, no accounts, just WiFi.",
         .pasteConvertRead: "Paste. Convert. Read.",
         .pasteConvertReadDescription: "Paste a URL, tap Convert, and CrossX fetches the page, extracts the article, and builds a clean EPUB — all in seconds.",
         .fetch: "Fetch",
         .extract: "Extract",
         .epub: "EPUB",
         .worksOffline: "Works Offline",
-        .worksOfflineDescription: "No device connected? No problem. Converted EPUBs are queued and sent automatically when your X4 connects.",
+        .worksOfflineDescription: "No device connected? No problem. Converted EPUBs are queued and sent automatically when your X3 connects.",
         .queueLabel: "Queue",
         .sendLabel: "Send",
         .convertFromAnywhere: "Convert from Anywhere",
         .convertFromAnywhereDescription: "Set up a Siri Shortcut to convert pages directly from Safari's Share menu.",
         .youreAllSet: "You're All Set",
-        .youreAllSetDescription: "Connect to your X4's WiFi hotspot and start converting. Your e-reader is waiting.",
+        .youreAllSetDescription: "Connect to your X3's WiFi hotspot and start converting. Your e-reader is waiting.",
         .getStarted: "Get Started",
 
         // WallpaperX View
@@ -698,7 +698,7 @@ enum L10n {
         .phaseFetching: "Fetching page...",
         .phaseExtracting: "Extracting content...",
         .phaseBuilding: "Building EPUB...",
-        .phaseSending: "Sending to X4...",
+        .phaseSending: "Sending to X3...",
         .phaseSent: "Sent!",
         .phaseSavedLocally: "Saved locally",
         .phaseFailed: "Failed",
@@ -710,9 +710,9 @@ enum L10n {
         .toastEntryCopied: "Entry Copied",
         .toastQueueSentAll: "%d EPUBs sent",
         .toastQueueSentPartial: "%d sent, %d failed",
-        .toastQueueSentSingle: "Sent to X4",
+        .toastQueueSentSingle: "Sent to X3",
         .toastQueueSendFailed: "Send failed",
-        .toastImageSent: "Sent to X4",
+        .toastImageSent: "Sent to X3",
         .toastImageConverted: "Image converted",
         .toastRSSSent: "%d articles sent",
         .toastRSSQueued: "%d articles queued",
@@ -726,15 +726,15 @@ enum L10n {
         // ConvertViewModel Messages
         .enterValidURL: "Please enter a valid URL.",
         .uploadAlreadyInProgress: "An upload is already in progress.",
-        .x4NotConnected: "X4 is not connected.",
+        .x4NotConnected: "X3 is not connected.",
         .invalidArticleURL: "Invalid article URL.",
-        .sentArticleToX4: "Sent \"%@\" to X4",
+        .sentArticleToX4: "Sent \"%@\" to X3",
         .queuedArticle: "Queued \"%@\" — will send when connected.",
         .epubCreated: "EPUB created: \"%@\"",
-        .resentArticleToX4: "Re-sent \"%@\" to X4",
+        .resentArticleToX4: "Re-sent \"%@\" to X3",
 
         // DeviceViewModel
-        .x4NotFoundMessage: "X4 not found. Connect to the X4 WiFi hotspot and try again.",
+        .x4NotFoundMessage: "X3 not found. Connect to the X3 WiFi hotspot and try again.",
 
         // FileManagerViewModel
         .notConnectedToDevice: "Not connected to device.",
@@ -791,10 +791,10 @@ enum L10n {
         .depth8bit: "8-bit",
         .depth4bit: "4-bit",
         .depth1bit: "1-bit",
-        .depthNotRecommended: "Not recommended for use with X4",
+        .depthNotRecommended: "Not recommended for use with X3",
 
         // DeviceError Descriptions
-        .errorCannotReachDevice: "Cannot reach X4 device. Make sure you are connected to the X4 WiFi hotspot.",
+        .errorCannotReachDevice: "Cannot reach X3 device. Make sure you are connected to the X3 WiFi hotspot.",
         .errorUploadFailed: "Upload failed with status code %d.",
         .errorCreateFolderFailed: "Could not create folder on device.",
         .errorUnexpectedResponse: "Received an unexpected response from the device.",
@@ -824,7 +824,7 @@ enum L10n {
         .connectingToX4: "Connecting to X4...",
         .sentToX4: "Sent to X4!",
         .epubSaved: "EPUB saved",
-        .x4NotConnectedLocalEPUB: "X4 not connected. EPUB file created locally.",
+        .x4NotConnectedLocalEPUB: "X3 not connected. EPUB file created locally.",
 
         // ConvertURLIntent
         .intentInvalidURL: "The input is not a valid URL. Please provide a web page link.",
@@ -918,7 +918,7 @@ enum L10n {
         .sendQueuedFilesTitle: "发送队列文件？",
         .sendAllCount: "全部发送 (%d)",
         .later: "稍后",
-        .sendQueuedFilesMessage: "您有 %d 本EPUB排队中。现在发送到X4？",
+        .sendQueuedFilesMessage: "您有 %d 本EPUB排队中。现在发送到X3？",
 
         // Convert View
         .enterWebpageURL: "输入网页URL",
@@ -928,7 +928,7 @@ enum L10n {
         .sendingPercent: "发送中 %d%%",
         .recent: "最近",
         .seeAll: "查看全部",
-        .resendToX4: "重新发送到X4",
+        .resendToX4: "重新发送到X3",
         .reconvertAndShare: "重新转换并分享",
         .copyURL: "复制链接",
         .untitled: "无标题",
@@ -978,7 +978,7 @@ enum L10n {
         .emptyFolderDescription: "此目录为空。点击 + 添加文件或创建文件夹。",
         .itemCount: "%d 个项目",
         .notConnected: "未连接",
-        .connectToDeviceToManage: "连接到X4设备以浏览和管理文件。",
+        .connectToDeviceToManage: "连接到X3设备以浏览和管理文件。",
         .loadingFiles: "正在加载文件...",
         .uploading: "正在上传...",
         .couldNotAccessFile: "无法访问所选文件。",
@@ -996,7 +996,7 @@ enum L10n {
         .failedToDeleteFolderRecursive: "从 %@ 删除文件夹「%@」未完全成功：已删除 %d/%d 个项目",
         .stopDelete: "停止",
         .deleteStopped: "已停止 — 已删除 %d/%d 个项目",
-        .fileManagerDeviceNote: "X4电子阅读器的WiFi性能有限。上传和批量操作（如删除文件夹）可能需要较长时间或偶尔失败——这是设备限制，非应用问题。应用会自动重试。",
+        .fileManagerDeviceNote: "X3电子阅读器的WiFi性能有限。上传和批量操作（如删除文件夹）可能需要较长时间或偶尔失败——这是设备限制，非应用问题。应用会自动重试。",
         .fileListSummary: "%d 个文件夹, %d 个文件, %@",
         .fileListSummaryNoFiles: "%d 个文件夹, %d 个文件",
 
@@ -1046,7 +1046,7 @@ enum L10n {
         .siriShortcut: "Siri快捷指令",
         .siriShortcutDescription: "使用Siri快捷指令直接从分享菜单将网页转换为EPUB并添加到队列",
         .openShortcutsApp: "打开快捷指令",
-        .siriShortcutFooter: "快捷指令在后台转换页面，并在X4连接时排队发送。",
+        .siriShortcutFooter: "快捷指令在后台转换页面，并在X3连接时排队发送。",
         .storage: "存储",
         .database: "数据库",
         .webCache: "网页缓存",
@@ -1106,20 +1106,20 @@ enum L10n {
         .next: "下一步",
         .skip: "跳过",
         .welcomeTitle: "欢迎使用CrossX",
-        .welcomeDescription: "将任何网页转换为EPUB并发送到您的Xteink X4电子阅读器——无需云端、无需账户，只需WiFi。",
+        .welcomeDescription: "将任何网页转换为EPUB并发送到您的Xteink X3电子阅读器——无需云端、无需账户，只需WiFi。",
         .pasteConvertRead: "粘贴。转换。阅读。",
         .pasteConvertReadDescription: "粘贴URL，点击转换，CrossX将获取页面、提取文章并生成整洁的EPUB——一切只需几秒。",
         .fetch: "获取",
         .extract: "提取",
         .epub: "EPUB",
         .worksOffline: "离线可用",
-        .worksOfflineDescription: "设备未连接？没问题。转换的EPUB将自动排队，在X4连接时自动发送。",
+        .worksOfflineDescription: "设备未连接？没问题。转换的EPUB将自动排队，在X3连接时自动发送。",
         .queueLabel: "队列",
         .sendLabel: "发送",
         .convertFromAnywhere: "随时随地转换",
         .convertFromAnywhereDescription: "设置Siri快捷指令，直接从Safari的分享菜单转换页面。",
         .youreAllSet: "一切就绪",
-        .youreAllSetDescription: "连接到X4的WiFi热点并开始转换。您的电子阅读器正在等待。",
+        .youreAllSetDescription: "连接到X3的WiFi热点并开始转换。您的电子阅读器正在等待。",
         .getStarted: "开始使用",
 
         // WallpaperX View
@@ -1144,7 +1144,7 @@ enum L10n {
         .phaseFetching: "正在获取页面...",
         .phaseExtracting: "正在提取内容...",
         .phaseBuilding: "正在生成EPUB...",
-        .phaseSending: "正在发送到X4...",
+        .phaseSending: "正在发送到X3...",
         .phaseSent: "已发送！",
         .phaseSavedLocally: "已本地保存",
         .phaseFailed: "失败",
@@ -1156,9 +1156,9 @@ enum L10n {
         .toastEntryCopied: "条目已复制",
         .toastQueueSentAll: "已发送%d个EPUB",
         .toastQueueSentPartial: "%d已发送，%d失败",
-        .toastQueueSentSingle: "已发送到X4",
+        .toastQueueSentSingle: "已发送到X3",
         .toastQueueSendFailed: "发送失败",
-        .toastImageSent: "已发送到X4",
+        .toastImageSent: "已发送到X3",
         .toastImageConverted: "图片已转换",
         .toastRSSSent: "已发送%d篇文章",
         .toastRSSQueued: "已排队%d篇文章",
@@ -1167,20 +1167,20 @@ enum L10n {
 
         // Queue Duplicate Prevention
         .urlAlreadyQueued: "此链接已在发送队列中。",
-        .intentAlreadyQueued: "此链接已在队列中。X4连接时将自动发送。",
+        .intentAlreadyQueued: "此链接已在队列中。X3连接时将自动发送。",
 
         // ConvertViewModel Messages
         .enterValidURL: "请输入有效的URL。",
         .uploadAlreadyInProgress: "上传正在进行中。",
-        .x4NotConnected: "X4未连接。",
+        .x4NotConnected: "X3未连接。",
         .invalidArticleURL: "无效的文章URL。",
-        .sentArticleToX4: "已发送「%@」到X4",
+        .sentArticleToX4: "已发送「%@」到X3",
         .queuedArticle: "已排队「%@」——连接时将自动发送。",
         .epubCreated: "EPUB已创建：「%@」",
-        .resentArticleToX4: "已重新发送「%@」到X4",
+        .resentArticleToX4: "已重新发送「%@」到X3",
 
         // DeviceViewModel
-        .x4NotFoundMessage: "未找到X4。请连接到X4 WiFi热点后重试。",
+        .x4NotFoundMessage: "未找到X3。请连接到X3 WiFi热点后重试。",
 
         // FileManagerViewModel
         .notConnectedToDevice: "未连接到设备。",
@@ -1237,10 +1237,10 @@ enum L10n {
         .depth8bit: "8位",
         .depth4bit: "4位",
         .depth1bit: "1位",
-        .depthNotRecommended: "不建议与X4配合使用",
+        .depthNotRecommended: "不建议与X3配合使用",
 
         // DeviceError Descriptions
-        .errorCannotReachDevice: "无法连接X4设备。请确保已连接到X4 WiFi热点。",
+        .errorCannotReachDevice: "无法连接X3设备。请确保已连接到X3 WiFi热点。",
         .errorUploadFailed: "上传失败，状态码 %d。",
         .errorCreateFolderFailed: "无法在设备上创建文件夹。",
         .errorUnexpectedResponse: "收到设备的意外响应。",
@@ -1267,10 +1267,10 @@ enum L10n {
         .contentTooShort: "内容太少",
         .couldNotExtractURL: "无法从分享内容中提取URL。",
         .couldNotExtractContent: "无法从此页面提取足够内容。",
-        .connectingToX4: "正在连接X4...",
-        .sentToX4: "已发送到X4！",
+        .connectingToX4: "正在连接X3...",
+        .sentToX4: "已发送到X3！",
         .epubSaved: "EPUB已保存",
-        .x4NotConnectedLocalEPUB: "X4未连接。EPUB文件已在本地创建。",
+        .x4NotConnectedLocalEPUB: "X3未连接。EPUB文件已在本地创建。",
 
         // ConvertURLIntent
         .intentInvalidURL: "输入的不是有效URL。请提供网页链接。",

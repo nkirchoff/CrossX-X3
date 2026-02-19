@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.png" alt="CrossX - Send To X4" width="100%">
+  <img src="docs/images/banner.png" alt="CrossX - Send To X3" width="100%">
 </p>
 
 # CrossX — Xteink iOS App Manager
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://apps.apple.com/us/app/crossx-send-to-x4/id6759236578"><img src="https://img.shields.io/badge/Download_on_the-App_Store-black?style=for-the-badge&logo=apple&logoColor=white" alt="Download on the App Store"></a>
+  <a href="https://apps.apple.com/us/app/crossx-send-to-x3/id6759236578"><img src="https://img.shields.io/badge/Download_on_the-App_Store-black?style=for-the-badge&logo=apple&logoColor=white" alt="Download on the App Store"></a>
   <img src="https://img.shields.io/badge/Platform-iOS_26%2B_|_macOS_26%2B-blue?style=for-the-badge&logo=apple" alt="Platform">
   <img src="https://img.shields.io/badge/Swift-5-orange?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5">
   <img src="https://img.shields.io/badge/SwiftUI-Liquid_Glass-007AFF?style=for-the-badge" alt="SwiftUI">
@@ -18,7 +18,7 @@
 
 **CrossX** is a native SwiftUI app for **iOS, iPadOS, and macOS** that converts any web page into an EPUB 2.0 e-book and transfers it to an [Xteink device](https://www.xteink.com/) e-reader over its local WiFi hotspot. No cloud services, no accounts, no subscriptions — just paste a URL, tap convert, and read.
 
-**Now available on the [App Store](https://apps.apple.com/us/app/crossx-send-to-x4/id6759236578)** — free to download.
+**Now available on the [App Store](https://apps.apple.com/us/app/crossx-send-to-x3/id6759236578)** — free to download.
 
 The app supports both **Stock** and **CrossPoint** firmware variants with automatic device detection, includes a full on-device **file manager**, and ships with an **iOS Share Extension** so you can send pages directly from Safari.
 
@@ -80,7 +80,7 @@ The app supports both **Stock** and **CrossPoint** firmware variants with automa
 ### Share Extension (iOS)
 
 - **Send from Safari** — use the iOS Share Sheet to convert any web page without opening CrossX
-- **Auto-detect device** — the extension finds your X4 automatically
+- **Auto-detect device** — the extension finds your X3 automatically
 - **Fallback to local save** — if the device isn't connected, the EPUB is saved locally
 - **Full pipeline** — runs the complete fetch → extract → build → send flow in the extension
 
@@ -142,7 +142,7 @@ The app supports both **Stock** and **CrossPoint** firmware variants with automa
                            │         EPUBQueue/
                            ▼
                  ┌─────────────────────────┐
-                 │       Xteink X4         │
+                 │       Xteink X3         │
                  │       E-Reader          │
                  │                         │
                  │  Stock:     192.168.3.3  │
@@ -213,13 +213,13 @@ See [Device Setup](#device-setup) below.
 
 ## Device Setup
 
-The Xteink X4 e-reader creates its own WiFi hotspot. CrossX communicates with it over plain HTTP on the local network.
+The Xteink X3 e-reader creates its own WiFi hotspot. CrossX communicates with it over plain HTTP on the local network.
 
-### Step 1: Connect to the X4 WiFi
+### Step 1: Connect to the X3 WiFi
 
-1. Power on your Xteink X4
+1. Power on your Xteink X3
 2. On your iPhone/iPad/Mac, go to **Settings → WiFi**
-3. Connect to the X4's WiFi network (the SSID varies by firmware)
+3. Connect to the X3's WiFi network (the SSID varies by firmware)
 
 ### Step 2: Open CrossX
 
@@ -365,7 +365,7 @@ crosspoint-app/
 The conversion pipeline runs entirely in memory with no temporary files:
 
 1. **Fetch** — `WebPageFetcher` downloads the HTML via `URLSession` with a Safari user-agent, encoding detection, and redirect following
-2. **Extract** — `ContentExtractor` (SwiftSoup) parses the DOM for article content using semantic selectors (`<article>`, `[role=main]`, `.post-content`, etc.). If extraction fails (< 400 chars), falls back to `ReadabilityExtractor` (WKWebView + Readability.js). Twitter/X URLs use `TwitterExtractor` via the fxtwitter API
+2. **Extract** — `ContentExtractor` (SwiftSoup) parses the DOM for article content using semantic selectors (`<article>`, `[role=main]`, `.post-content`, `.entry-content`, `.article-body`, `#content`, `main`, and more). If extraction fails (< 400 chars), falls back to `ReadabilityExtractor` (WKWebView + Readability.js). Twitter/X URLs use `TwitterExtractor` via the fxtwitter API
 3. **Sanitize** — `HTMLSanitizer` strips all scripts, styles, forms, media, images, SVGs, iframes, event handlers, and data attributes. Links are converted to plain text for a clean reading experience
 4. **Build** — `EPUBBuilder` assembles the EPUB 2.0 package in memory: `mimetype` (uncompressed), `META-INF/container.xml`, `content.opf`, `toc.ncx`, and one or more `chapter-N.xhtml` files. Long content is auto-split by `ChapterSplitter` at `<h2>` boundaries or every 50 paragraphs
 5. **Send** — The `Data` blob is uploaded via multipart/form-data POST to the device's upload endpoint, with real-time progress tracking
@@ -417,7 +417,7 @@ Dependencies are managed via **Xcode's Swift Package Manager** integration. They
 
 ## Roadmap
 
-- [ ] **WallpaperX** — custom wallpaper upload and management for the X4
+- [ ] **WallpaperX** — custom wallpaper upload and management for the X3
 - [ ] **Share Extension queue integration** — update the iOS Share Extension to use the queue system instead of temp file saves
 - [ ] **File rename** — currently disabled; waiting for CrossPoint firmware API stabilization
 - [ ] **Image support in EPUBs** — optionally include images for richer e-books
@@ -454,5 +454,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ---
 
 <p align="center">
-  Built for the <a href="https://Xteink.com">Xteink X4</a> e-reader community.
+  Built for the <a href="https://Xteink.com">Xteink X3</a> e-reader community.
 </p>

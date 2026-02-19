@@ -22,7 +22,7 @@ enum AppLanguage: String, Codable, CaseIterable {
 
 // MARK: - FirmwareType
 
-/// Supported firmware types for the Xtreink X4.
+/// Supported firmware types for the Xtreink X3.
 enum FirmwareType: String, Codable, CaseIterable {
     case stock = "Stock"
     case crossPoint = "CrossPoint"

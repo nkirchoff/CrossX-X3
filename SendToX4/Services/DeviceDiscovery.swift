@@ -27,10 +27,10 @@ nonisolated enum DiscoveryResult: Sendable {
     }
 }
 
-/// Discovers the X4 device by probing known firmware endpoints.
+/// Discovers the X3 device by probing known firmware endpoints.
 nonisolated enum DeviceDiscovery {
     
-    /// Auto-detect the X4 device by trying Stock and CrossPoint endpoints concurrently.
+    /// Auto-detect the X3 device by trying Stock and CrossPoint endpoints concurrently.
     /// CrossPoint detection tries crosspoint.local first, then falls back to static IP.
     static func detect() async -> DiscoveryResult {
         // Probe stock and CrossPoint in parallel

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-/// Manages X4 device connectivity state and auto-detection.
+/// Manages X3 device connectivity state and auto-detection.
 @MainActor
 @Observable
 final class DeviceViewModel {
@@ -49,7 +49,7 @@ final class DeviceViewModel {
 
     // MARK: - Actions
 
-    /// Search for the X4 device using auto-detection or configured settings.
+    /// Search for the X3 device using auto-detection or configured settings.
     func search(settings: DeviceSettings?) async {
         stopHealthPing()
         isSearching = true

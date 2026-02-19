@@ -118,7 +118,7 @@ enum BMPColorDepth: Int, CaseIterable, Sendable {
         }
     }
 
-    /// Whether this depth is recommended for the X4 device.
+    /// Whether this depth is recommended for the X3 device.
     var isRecommended: Bool {
         self == .depth24 || self == .depth8
     }

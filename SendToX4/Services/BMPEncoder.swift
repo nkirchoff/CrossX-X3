@@ -3,7 +3,7 @@ import Foundation
 
 /// Encodes a `CGImage` into Windows BMP format (BITMAPINFOHEADER, BI_RGB).
 ///
-/// Faithfully implements the BMP specification used by the X4 wallpaper converter:
+/// Faithfully implements the BMP specification used by the X3 wallpaper converter:
 /// - 14-byte file header + 40-byte DIB header (BITMAPINFOHEADER)
 /// - No compression (BI_RGB)
 /// - Bottom-up scanline order

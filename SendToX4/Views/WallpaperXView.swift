@@ -5,7 +5,7 @@ import SwiftUI
 
 // MARK: - WallpaperXView
 
-/// WallpaperX — convert images to BMP format for the X4 e-reader.
+/// WallpaperX — convert images to BMP format for the X3 e-reader.
 ///
 /// Layout:
 /// - **iOS**: Preview fills the screen. Quick controls (rotation) live in the

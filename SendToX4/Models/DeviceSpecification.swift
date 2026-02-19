@@ -31,13 +31,13 @@ extension DeviceSpecification: Hashable {
 
     // MARK: - Known Devices
 
-    /// Xtreink X4 e-reader (480 x 800 e-ink display).
-    static let x4 = DeviceSpecification(
-        id: "x4",
-        name: "Xtreink X4",
+    /// Xteink X3 e-reader (480 x 800 e-ink display).
+    static let x3 = DeviceSpecification(
+        id: "x3",
+        name: "Xteink X3",
         resolution: CGSize(width: 480, height: 800)
     )
 
     /// All known device profiles.
-    static let all: [DeviceSpecification] = [.x4]
+    static let all: [DeviceSpecification] = [.x3]
 }

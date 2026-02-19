@@ -3,7 +3,7 @@ import SwiftData
 import StoreKit
 import UniformTypeIdentifiers
 
-/// Full-featured file manager for browsing and managing files on the X4 device.
+/// Full-featured file manager for browsing and managing files on the X3 device.
 struct FileManagerView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.requestReview) private var requestReview

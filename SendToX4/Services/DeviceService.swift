@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Models
 
-/// Represents a file or directory on the X4 device.
+/// Represents a file or directory on the X3 device.
 nonisolated struct DeviceFile: Identifiable, Equatable {
     let name: String
     let isDirectory: Bool
@@ -118,7 +118,7 @@ nonisolated enum DeviceError: LocalizedError {
 
 // MARK: - Protocol
 
-/// Protocol defining the interface for X4 device communication.
+/// Protocol defining the interface for X3 device communication.
 /// Both Stock and CrossPoint firmware implement this protocol.
 nonisolated protocol DeviceService: Sendable {
     var baseURL: URL { get }

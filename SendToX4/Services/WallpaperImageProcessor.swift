@@ -3,7 +3,7 @@ import Foundation
 
 /// Processes images for device wallpaper conversion using Core Graphics.
 ///
-/// The pipeline matches the reference X4 wallpaper converter:
+/// The pipeline matches the reference X3 wallpaper converter:
 /// 1. Apply rotation
 /// 2. Create target-sized canvas with background fill
 /// 3. Draw image using the selected fit mode and alignment

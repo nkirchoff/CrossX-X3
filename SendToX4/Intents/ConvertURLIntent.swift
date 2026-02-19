@@ -29,14 +29,14 @@ enum ConvertURLIntentError: Error, CustomLocalizedStringResourceConvertible {
         case .queueWriteFailed(let detail):
             return "Could not save the EPUB to the queue: \(detail)"
         case .alreadyQueued:
-            return "This URL is already in the queue. It will be sent when your X4 connects."
+            return "This URL is already in the queue. It will be sent when your X3 connects."
         }
     }
 }
 
 // MARK: - Intent
 
-/// Siri Shortcut that converts a web page URL to EPUB and queues it for sending to X4.
+/// Siri Shortcut that converts a web page URL to EPUB and queues it for sending to X3.
 ///
 /// Designed to work seamlessly from:
 /// - **Shortcuts Share Sheet**: auto-receives the shared URL via `connectToPreviousIntentResult`
@@ -51,7 +51,7 @@ struct ConvertURLIntent: AppIntent {
     static var title: LocalizedStringResource = "Convert to EPUB & Add to Queue"
 
     static var description = IntentDescription(
-        "Converts a web page to EPUB format and queues it for sending to your X4 e-reader.",
+        "Converts a web page to EPUB format and queues it for sending to your X3 e-reader.",
         categoryName: "Convert"
     )
 

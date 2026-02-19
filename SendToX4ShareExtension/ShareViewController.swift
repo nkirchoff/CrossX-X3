@@ -3,7 +3,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 /// Share Extension entry point.
-/// Receives URLs from Safari and other apps, converts to EPUB, and sends to X4.
+/// Receives URLs from Safari and other apps, converts to EPUB, and sends to X3.
 class ShareViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -137,8 +137,8 @@ struct ShareExtensionView: View {
             
             if let service = discovery.service {
                 status = loc(.phaseSending)
-                try await service.ensureFolder("send-to-x4")
-                try await service.uploadFile(data: epubData, filename: filename, toFolder: "send-to-x4")
+                try await service.ensureFolder("send-to-x3")
+                try await service.uploadFile(data: epubData, filename: filename, toFolder: "send-to-x3")
                 
                 status = loc(.sentToX4)
                 isSuccess = true

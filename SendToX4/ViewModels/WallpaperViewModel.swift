@@ -43,7 +43,7 @@ final class WallpaperViewModel {
     }
 
     /// Target device specification.
-    var device = DeviceSpecification.x4
+    var device = DeviceSpecification.x3
 
     // MARK: - UI State
 
