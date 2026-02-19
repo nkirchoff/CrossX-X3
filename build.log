@@ -1,0 +1,494 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme SendToX4 -destination platform=macOS build
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  AlertToast: https://github.com/elai950/AlertToast @ 1.3.9
+  swift-atomics: https://github.com/apple/swift-atomics.git @ 1.3.0
+  SwiftSoup: https://github.com/scinfu/SwiftSoup.git @ 2.11.3
+  ZIPFoundation: https://github.com/weichsel/ZIPFoundation.git @ 0.9.20
+  LRUCache: https://github.com/nicklockwood/LRUCache.git @ 1.2.1
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00008112-001079881104401E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00008112-001079881104401E, name:My Mac }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (13 targets)
+    Target 'SendToX4' in project 'SendToX4'
+        ➜ Explicit dependency on target 'AlertToast' in project 'AlertToast'
+        ➜ Explicit dependency on target 'ZIPFoundation' in project 'ZIPFoundation'
+        ➜ Explicit dependency on target 'SwiftSoup' in project 'SwiftSoup'
+    Target 'SwiftSoup' in project 'SwiftSoup'
+        ➜ Explicit dependency on target 'SwiftSoup' in project 'SwiftSoup'
+        ➜ Explicit dependency on target 'LRUCache' in project 'LRUCache'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'SwiftSoup' in project 'SwiftSoup'
+        ➜ Explicit dependency on target 'LRUCache' in project 'LRUCache'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+    Target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target '_AtomicsShims' in project 'swift-atomics'
+    Target 'Atomics' in project 'swift-atomics'
+        ➜ Explicit dependency on target '_AtomicsShims' in project 'swift-atomics'
+    Target '_AtomicsShims' in project 'swift-atomics' (no dependencies)
+    Target 'LRUCache' in project 'LRUCache'
+        ➜ Explicit dependency on target 'LRUCache' in project 'LRUCache'
+    Target 'LRUCache' in project 'LRUCache' (no dependencies)
+    Target 'ZIPFoundation' in project 'ZIPFoundation'
+        ➜ Explicit dependency on target 'ZIPFoundation' in project 'ZIPFoundation'
+        ➜ Explicit dependency on target 'ZIPFoundation_ZIPFoundation' in project 'ZIPFoundation'
+    Target 'ZIPFoundation' in project 'ZIPFoundation'
+        ➜ Explicit dependency on target 'ZIPFoundation_ZIPFoundation' in project 'ZIPFoundation'
+    Target 'ZIPFoundation_ZIPFoundation' in project 'ZIPFoundation' (no dependencies)
+    Target 'AlertToast' in project 'AlertToast'
+        ➜ Explicit dependency on target 'AlertToast' in project 'AlertToast'
+    Target 'AlertToast' in project 'AlertToast' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ReadFileContents /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/docc/features.json
+
+Build description signature: 6153d5121bbea3f7b596696aa8e07e7a
+Build description path: /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/XCBuildData/6153d5121bbea3f7b596696aa8e07e7a.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -o /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache
+
+ProcessInfoPlistFile /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/ZIPFoundation_ZIPFoundation.bundle/Contents/Info.plist /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/ZIPFoundation.build/Debug/ZIPFoundation_ZIPFoundation.build/empty-ZIPFoundation_ZIPFoundation.plist (in target 'ZIPFoundation_ZIPFoundation' from project 'ZIPFoundation')
+    cd /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/ZIPFoundation
+    builtin-infoPlistUtility /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/ZIPFoundation.build/Debug/ZIPFoundation_ZIPFoundation.build/empty-ZIPFoundation_ZIPFoundation.plist -producttype com.apple.product-type.bundle -expandbuildsettings -platform macosx -o /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/ZIPFoundation_ZIPFoundation.bundle/Contents/Info.plist
+
+SwiftDriver SwiftSoup normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftSoup -Onone -enforce-exclusivity\=checked @/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos10.15 -g -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule -user-module-version 2.11.3 -validate-clang-modules-once -clang-build-session-file /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name swiftsoup -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources-normal/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h -working-directory /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ Evaluator.swift,\ Exception.swift,\ FormElement.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Evaluator.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Exception.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/FormElement.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Evaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Exception.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/FormElement.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ Node.swift,\ NodeTraversor.swift,\ NodeVisitor.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Node.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/NodeTraversor.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/NodeVisitor.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Node.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/NodeTraversor.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/NodeVisitor.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ HtmlTreeBuilder.swift,\ HtmlTreeBuilderState.swift,\ Mutex.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilder.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilderState.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Mutex.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilderState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Mutex.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SwiftSoup (in target 'SwiftSoup' from project 'SwiftSoup')
+
+EmitSwiftModule normal arm64 (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ ParseSettings.swift,\ Parser.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParseSettings.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Parser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParseSettings.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Parser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ ParsingStrings.swift,\ Pattern.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParsingStrings.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Pattern.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParsingStrings.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Pattern.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ OrderedSet.swift,\ ParseError.swift,\ ParseErrorList.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/OrderedSet.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParseError.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParseErrorList.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/OrderedSet.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParseError.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/ParseErrorList.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ Element.swift,\ Elements.swift,\ Entities.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Element.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Elements.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Entities.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Element.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Elements.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Entities.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ QueryParser.swift,\ QueryParserCache.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/QueryParser.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/QueryParserCache.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/QueryParser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/QueryParserCache.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ParseSettings.swift, Parser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ Tag.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Tag.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Tag.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Node.swift, NodeTraversor.swift, NodeVisitor.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ Cleaner.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Cleaner.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Cleaner.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Evaluator.swift, Exception.swift, FormElement.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ Attribute.swift,\ Attributes.swift,\ BinarySearch.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Attribute.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Attributes.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/BinarySearch.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Attribute.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Attributes.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/BinarySearch.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling OrderedSet.swift, ParseError.swift, ParseErrorList.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ StructuralEvaluator.swift,\ TextNode.swift,\ Token.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StructuralEvaluator.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TextNode.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Token.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StructuralEvaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TextNode.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Token.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ParsingStrings.swift, Pattern.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ BooleanAttribute.swift,\ CharacterExt.swift,\ CharacterReader.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/BooleanAttribute.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CharacterExt.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CharacterReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/BooleanAttribute.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CharacterExt.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CharacterReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Cleaner.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ UTF8Arrays.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/UTF8Arrays.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/UTF8Arrays.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Tag.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ XmlTreeBuilder.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/XmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/XmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling QueryParser.swift, QueryParserCache.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ String.swift,\ StringBuilder.swift,\ StringUtil.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/String.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StringBuilder.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StringUtil.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/String.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:104:9: error: expected declaration
+        .frame(minWidth: 500, minHeight: 600)
+        ^
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:5:8: note: in declaration of 'SettingsSheet'
+struct SettingsSheet: View {
+       ^
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:361:20: error: static properties may only be declared on a type
+    private static let githubIssuesURL = URL(string: "https://github.com/jtvargas/crosspoint-app/issues/new/choose")!
+            ~~~~~~~^
+            
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:362:20: error: static properties may only be declared on a type
+    private static let githubCodeURL = URL(string: "https://github.com/jtvargas/crosspoint-app")!
+            ~~~~~~~^
+            
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:484:1: error: extraneous '}' at top level
+}
+^
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StringBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StringUtil.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling Attribute.swift, Attributes.swift, BinarySearch.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ CssSelector.swift,\ DataNode.swift,\ DocumentType.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CssSelector.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/DataNode.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/DocumentType.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CssSelector.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/DataNode.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/DocumentType.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SwiftSoup (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Compiling UTF8Arrays.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriver\ Compilation\ Requirements SwiftSoup normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftSoup -Onone -enforce-exclusivity\=checked @/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos10.15 -g -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule -user-module-version 2.11.3 -validate-clang-modules-once -clang-build-session-file /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name swiftsoup -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources-normal/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h -working-directory /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ Document.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Document.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Document.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+Copy /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/SwiftSoup.swiftmodule/arm64-apple-macos.abi.json /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.abi.json (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.abi.json /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/SwiftSoup.swiftmodule/arm64-apple-macos.abi.json
+
+SwiftDriverJobDiscovery normal arm64 Compiling Element.swift, Elements.swift, Entities.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ StreamReader.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StreamReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/StreamReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling XmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ TreeBuilder.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ Collector.swift,\ CombiningEvaluator.swift,\ Comment.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Collector.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CombiningEvaluator.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Comment.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Collector.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/CombiningEvaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Comment.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling StructuralEvaluator.swift, TextNode.swift, Token.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ TokenQueue.swift,\ Tokeniser.swift,\ TokeniserState.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TokenQueue.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Tokeniser.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TokeniserState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TokenQueue.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Tokeniser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/TokeniserState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling CssSelector.swift, DataNode.swift, DocumentType.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ SwiftSoup.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/SwiftSoup.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/SwiftSoup.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling StreamReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ Validate.swift,\ Whitelist.swift,\ XmlDeclaration.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Validate.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Whitelist.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/XmlDeclaration.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Validate.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/Whitelist.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/XmlDeclaration.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling TreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+ProcessProductPackaging /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/SendToX4.entitlements /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4.app.xcent (in target 'SendToX4' from project 'SendToX4')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.files.user-selected.read-only" = 1;
+    "com.apple.security.get-task-allow" = 1;
+    "com.apple.security.network.client" = 1;
+}
+    
+    builtin-productPackagingUtility /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/SendToX4.entitlements -entitlements -format xml -o /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4.app.xcent
+
+SwiftDriverJobDiscovery normal arm64 Compiling BooleanAttribute.swift, CharacterExt.swift, CharacterReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+ProcessProductPackagingDER /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4.app.xcent /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4.app.xcent.der (in target 'SendToX4' from project 'SendToX4')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3
+    /usr/bin/derq query -f xml -i /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4.app.xcent -o /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4.app.xcent.der --raw
+
+SwiftDriver SendToX4 normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SendToX4' from project 'SendToX4')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SendToX4 -Onone -enforce-exclusivity\=checked @/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/Objects-normal/arm64/SendToX4.SwiftFileList -DDEBUG -default-isolation\=MainActor -enable-bare-slash-regex -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos26.2 -g -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -emit-localized-strings -emit-localized-strings-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/Objects-normal/arm64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/Objects-normal/arm64/SendToX4-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/Objects-normal/arm64/SendToX4.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/Objects-normal/arm64/SendToX4_const_extract_protocols.json -Xcc -iquote -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4-generated-files.hmap -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4-own-target-headers.hmap -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4-ef030c9a8fb5df49002eec99bd4029fc-VFS/all-product-headers.yaml -Xcc -iquote -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/SendToX4-project-headers.hmap -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/DerivedSources-normal/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/DerivedSources/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/Objects-normal/arm64/SendToX4-Swift.h -working-directory /Users/nathanielkirchoff/crossxapp/CrossX-X3 -experimental-emit-module-separately -disable-cmo
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:104:9: error: Expected declaration
+        .frame(minWidth: 500, minHeight: 600)
+        ^ (in target 'SendToX4' from project 'SendToX4')
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:5:8: note: In declaration of 'SettingsSheet'
+struct SettingsSheet: View {
+       ^ (in target 'SendToX4' from project 'SendToX4')
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:361:20: error: Static properties may only be declared on a type
+    private static let githubIssuesURL = URL(string: "https://github.com/jtvargas/crosspoint-app/issues/new/choose")!
+            ~~~~~~~^
+             (in target 'SendToX4' from project 'SendToX4')
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:362:20: error: Static properties may only be declared on a type
+    private static let githubCodeURL = URL(string: "https://github.com/jtvargas/crosspoint-app")!
+            ~~~~~~~^
+             (in target 'SendToX4' from project 'SendToX4')
+/Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Views/SettingsSheet.swift:484:1: error: Extraneous '}' at top level
+}
+^ (in target 'SendToX4' from project 'SendToX4')
+
+SwiftDriverJobDiscovery normal arm64 Compiling Collector.swift, CombiningEvaluator.swift, Comment.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+CompileAssetCatalogVariant thinned /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/SendToX4.app/Contents/Resources /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Assets.xcassets /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/crosspoint-app.icon (in target 'SendToX4' from project 'SendToX4')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/Assets.xcassets /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4/crosspoint-app.icon --compile /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SendToX4.build/Debug/SendToX4.build/assetcatalog_generated_info.plist_thinned --app-icon crosspoint-app --accent-color AccentColor --enable-on-demand-resources NO --development-region en --target-device mac --minimum-deployment-target 26.2 --platform macosx
+
+SwiftDriverJobDiscovery normal arm64 Compiling SwiftSoup.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Compiling Document.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Compiling Validate.swift, Whitelist.swift, XmlDeclaration.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Compiling HtmlTreeBuilder.swift, HtmlTreeBuilderState.swift, Mutex.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ UnicodeScalar.swift /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/UnicodeScalar.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup/Sources/UnicodeScalar.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling UnicodeScalar.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Compiling TokenQueue.swift, Tokeniser.swift, TokeniserState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Compiling String.swift, StringBuilder.swift, StringUtil.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriver\ Compilation SwiftSoup normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftSoup -Onone -enforce-exclusivity\=checked @/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-macos10.15 -g -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.2-25C57-00fa09913b459cbbc988d1f6730289ae.sdkstatcache -output-file-map /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule -user-module-version 2.11.3 -validate-clang-modules-once -clang-build-session-file /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name swiftsoup -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/swift-atomics/Sources/_AtomicsShims/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/include -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources-normal/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources/arm64 -Xcc -I/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h -working-directory /Users/nathanielkirchoff/crossxapp/CrossX-X3/SendToX4.xcodeproj -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/SwiftSoup.o normal (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/SourcePackages/checkouts/SwiftSoup
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos10.15 -r -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -O0 -w -L/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/PackageFrameworks -F/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -filelist /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.LinkFileList -nostdlib -Xlinker -object_path_lto -Xlinker /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule @/Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Intermediates.noindex/SwiftSoup.build/Debug/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-linker-args.resp -o /Users/nathanielkirchoff/Library/Developer/Xcode/DerivedData/SendToX4-bqjathvbzhnnvwfbqzfrcaqxspzu/Build/Products/Debug/SwiftSoup.o
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver SendToX4 normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SendToX4' from project 'SendToX4')
+	Building project SendToX4 with scheme SendToX4
+(2 failures)

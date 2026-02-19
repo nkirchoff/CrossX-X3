@@ -39,7 +39,10 @@ struct SettingsSheet: View {
                 storageSection
                 aboutSection
             }
-            .navigationTitle(loc(.settings))
+            #if os(macOS)
+            .frame(width: 600, height: 700)
+            #endif
+        .navigationTitle(loc(.settings))
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
@@ -99,9 +102,7 @@ struct SettingsSheet: View {
                 Text(loc(.reportBugMessage))
             }
         }
-        #if os(macOS)
-        .frame(width: 600, height: 700)
-        #endif
+
     }
     
 
