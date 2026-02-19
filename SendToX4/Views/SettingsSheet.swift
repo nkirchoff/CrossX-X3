@@ -30,29 +30,46 @@ struct SettingsSheet: View {
     var body: some View {
         #if os(macOS)
         TabView {
-            Form {
-                languageSection
-                featureFoldersSection
-                feedbackSection
-                aboutSection
+            ScrollView {
+                Form {
+                    languageSection
+                    deviceSection
+                    featureFoldersSection
+                }
+                .formStyle(.grouped)
             }
             .tabItem { Label("General", systemImage: "gear") }
             .tag(0)
 
-            Form {
-                deviceSection
-                connectionTestSection
+            ScrollView {
+                Form {
+                    connectionTestSection
+                }
+                .formStyle(.grouped)
             }
             .tabItem { Label("Connection", systemImage: "network") }
             .tag(1)
 
-            Form {
-                storageSection
+            ScrollView {
+                Form {
+                    storageSection
+                }
+                .formStyle(.grouped)
             }
             .tabItem { Label("Storage", systemImage: "internaldrive") }
             .tag(2)
+
+            ScrollView {
+                Form {
+                    feedbackSection
+                    aboutSection
+                }
+                .formStyle(.grouped)
+            }
+            .tabItem { Label("About", systemImage: "info.circle") }
+            .tag(3)
         }
-        .frame(width: 500, height: 400) // Fixed size for tabbed preferences
+        .frame(width: 520, height: 480)
         .padding()
         .task { refreshStorageSizes() }
         .onChange(of: settings.appLanguage) { _, newLang in LocalizationManager.shared.currentLanguage = newLang }
