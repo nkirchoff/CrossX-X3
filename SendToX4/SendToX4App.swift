@@ -1,8 +1,6 @@
 //
 //  SendToX4App.swift
-//  SendToX4
-//
-//  Created by Jonathan Taveras Vargas on 2/13/26.
+//  CrossX — Xteink X3 Manager
 //
 
 import SwiftUI

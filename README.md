@@ -2,23 +2,22 @@
   <img src="docs/images/banner.png" alt="CrossX - Send To X3" width="100%">
 </p>
 
-# CrossX — Xteink iOS App Manager
+# CrossX — Xteink X3 E-Reader Manager
 
 <p align="center">
   <strong>Convert web pages to EPUB. Send them to your e-reader. All over WiFi.</strong>
 </p>
 
 <p align="center">
-  <a href="https://apps.apple.com/us/app/crossx-send-to-x3/id6759236578"><img src="https://img.shields.io/badge/Download_on_the-App_Store-black?style=for-the-badge&logo=apple&logoColor=white" alt="Download on the App Store"></a>
   <img src="https://img.shields.io/badge/Platform-iOS_26%2B_|_macOS_26%2B-blue?style=for-the-badge&logo=apple" alt="Platform">
   <img src="https://img.shields.io/badge/Swift-5-orange?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5">
   <img src="https://img.shields.io/badge/SwiftUI-Liquid_Glass-007AFF?style=for-the-badge" alt="SwiftUI">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="MIT License"></a>
 </p>
 
-**CrossX** is a native SwiftUI app for **iOS, iPadOS, and macOS** that converts any web page into an EPUB 2.0 e-book and transfers it to an [Xteink device](https://www.xteink.com/) e-reader over its local WiFi hotspot. No cloud services, no accounts, no subscriptions — just paste a URL, tap convert, and read.
+**CrossX** is a native SwiftUI app for **iOS, iPadOS, and macOS** that converts any web page into an EPUB 2.0 e-book and transfers it to an [Xteink X3](https://www.xteink.com/) e-reader over its local WiFi hotspot. No cloud services, no accounts, no subscriptions — just paste a URL, tap convert, and read.
 
-**Now available on the [App Store](https://apps.apple.com/us/app/crossx-send-to-x3/id6759236578)** — free to download.
+> 🤖 *Lovingly vibecoded with [Antigravity](https://blog.google/technology/google-deepmind/antigravity-ai-coding-agent/) by Google DeepMind.*
 
 The app supports both **Stock** and **CrossPoint** firmware variants with automatic device detection, includes a full on-device **file manager**, and ships with an **iOS Share Extension** so you can send pages directly from Safari.
 
@@ -104,7 +103,7 @@ The app supports both **Stock** and **CrossPoint** firmware variants with automa
 ### Cross-Platform
 
 - **Native multiplatform** — single codebase builds natively for iOS, iPadOS, and macOS (not Mac Catalyst)
-- **Platform-adaptive UI** — tab bar bottom accessory on iOS, Xcode-style status bar on macOS
+- **Platform-adaptive UI** — tab bar bottom accessory on iOS, tabbed preferences on macOS
 - **Liquid Glass design** — leverages iOS 26 / macOS 26 `.glassEffect()` modifiers
 - **Cross-platform clipboard** — unified helper abstracts `UIPasteboard` (iOS) and `NSPasteboard` (macOS)
 
@@ -171,8 +170,8 @@ The app supports both **Stock** and **CrossPoint** firmware variants with automa
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/jtvargas/crosspoint-app.git
-cd crosspoint-app
+git clone https://github.com/nkirchoff/CrossX-X3.git
+cd CrossX-X3
 ```
 
 ### 2. Open in Xcode
@@ -237,7 +236,6 @@ Open **Settings** (gear icon) to:
 - Choose your firmware type manually (or leave on auto-detect)
 - Set a custom IP address
 - Configure destination folders for conversions and wallpapers
-- Toggle optional features (File Manager, WallpaperX)
 
 > **Network note**: The app requires the `NSAllowsLocalNetworking` ATS exception and `com.apple.security.network.client` entitlement for plain HTTP communication with the device. These are already configured in the project.
 
@@ -274,133 +272,7 @@ Views → ViewModels → Services
 - **In-memory EPUB generation** — no temporary files; all ZIP operations produce `Data` objects directly
 - **Offline queue** — EPUBs are written to disk and tracked via SwiftData when the device is disconnected; batch-sent when it reconnects
 - **Headless Siri Shortcuts** — `ConvertURLIntent` runs the full conversion pipeline without opening the app, using its own `ModelContext` against the shared SwiftData store
-- **`@MainActor` by default** — the project uses `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`; services are explicitly marked `nonisolated` to avoid stack overflows
 - **Native multiplatform** — `SDKROOT = auto` with `#if os(iOS)` / `#if canImport(UIKit)` conditional compilation (not Mac Catalyst)
-
----
-
-## Project Structure
-
-```
-crosspoint-app/
-├── SendToX4.xcodeproj/          # Xcode project (SPM dependencies, build settings)
-├── Info.plist                   # ATS local networking exception
-├── AGENTS.md                    # Developer reference (architecture, conventions, deep dives)
-├── README.md                    # This file
-├── LICENSE                      # MIT License
-│
-├── SendToX4/                    # Main app target
-│   ├── SendToX4App.swift        # @main entry point, SwiftData ModelContainer setup
-│   ├── SendToX4.entitlements    # App Sandbox + network client + Siri
-│   │
-│   ├── Models/
-│   │   ├── Article.swift        # Conversion history model (URL, title, status, error)
-│   │   ├── DeviceSettings.swift # Device config singleton (firmware type, IP, toggles)
-│   │   ├── ActivityEvent.swift  # File operation log (upload, mkdir, move, delete, queue)
-│   │   └── QueueItem.swift      # EPUB send queue model (file path, size, linked Article)
-│   │
-│   ├── Views/
-│   │   ├── MainView.swift       # Root tab view (Convert, History, File Manager, WallpaperX)
-│   │   ├── ConvertView.swift    # URL input, convert & send actions, share sheet
-│   │   ├── HistoryView.swift    # Unified activity timeline with filtering and search
-│   │   ├── FileManagerView.swift      # Device file browser with breadcrumbs
-│   │   ├── FileManagerRow.swift       # File/folder row with context menu
-│   │   ├── SettingsSheet.swift        # Device configuration form
-│   │   ├── SettingsToolbarModifier.swift # Reusable gear button toolbar modifier
-│   │   ├── DeviceStatusBar.swift      # Device info bar (version, IP, RSSI, uptime)
-│   │   ├── DeviceConnectionAccessory.swift # iOS bottom tab accessory (connect status)
-│   │   ├── MacDeviceStatusBar.swift   # macOS bottom status bar (Xcode-style)
-│   │   ├── WallpaperXView.swift       # Placeholder for future wallpaper feature
-│   │   ├── MoveFileSheet.swift        # Destination folder picker for move
-│   │   ├── RenameFileSheet.swift      # File rename with extension lock
-│   │   └── CreateFolderSheet.swift    # New folder name input with validation
-│   │
-│   ├── ViewModels/
-│   │   ├── ConvertViewModel.swift     # URL → EPUB → device pipeline orchestrator
-│   │   ├── DeviceViewModel.swift      # Connection state, auto-detection, upload progress
-│   │   ├── FileManagerViewModel.swift # File browsing, CRUD operations, activity logging
-│   │   ├── HistoryViewModel.swift     # Search, delete, granular clear for history
-│   │   └── QueueViewModel.swift       # Queue management (enqueue, sendAll, remove, clear)
-│   │
-│   ├── Services/
-│   │   ├── DeviceService.swift        # Protocol + models (DeviceFile, DeviceStatus, DeviceError)
-│   │   ├── StockFirmwareService.swift # Stock firmware implementation (192.168.3.3)
-│   │   ├── CrossPointFirmwareService.swift # CrossPoint implementation (192.168.4.1 / mDNS)
-│   │   ├── DeviceDiscovery.swift      # Concurrent firmware auto-detection engine
-│   │   ├── EPUBBuilder.swift          # In-memory EPUB 2.0 ZIP builder
-│   │   ├── EPUBTemplates.swift        # EPUB XML templates (OPF, NCX, XHTML, CSS)
-│   │   ├── ChapterSplitter.swift      # Long content → multi-chapter splitting
-│   │   ├── ContentExtractor.swift     # SwiftSoup heuristic article extraction
-│   │   ├── ReadabilityExtractor.swift # WKWebView + Readability.js fallback
-│   │   ├── WebPageFetcher.swift       # URLSession HTML fetcher with encoding detection
-│   │   └── TwitterExtractor.swift     # X/Twitter via fxtwitter API
-│   │
-│   ├── Intents/
-│   │   ├── ConvertURLIntent.swift     # App Intent: URL → EPUB → queue (Siri/Shortcuts)
-│   │   └── CrossXShortcuts.swift      # AppShortcutsProvider (Siri phrases)
-│   │
-│   ├── Utilities/
-│   │   ├── HTMLSanitizer.swift        # Strip unsafe HTML for text-only EPUB
-│   │   ├── StringExtensions.swift     # XML escaping, domain extraction, truncation
-│   │   ├── FileNameGenerator.swift    # EPUB filename from metadata
-│   │   ├── ClipboardHelper.swift      # Cross-platform clipboard (UIKit/AppKit)
-│   │   ├── StorageCalculator.swift    # Storage size calculations (DB, cache, queue, temp)
-│   │   ├── ReviewPromptManager.swift  # In-app review prompt after successful actions
-│   │   └── DesignTokens.swift         # AppColor design system (accent, success, error, warning)
-│   │
-│   ├── Resources/
-│   │   └── readability.js            # Mozilla Readability.js (bundled for WKWebView)
-│   │
-│   └── Assets.xcassets/              # App icon, AccentColor (teal light/dark)
-│
-└── SendToX4ShareExtension/           # iOS Share Extension target
-    ├── Info.plist                     # Extension config (accepts 1 web URL)
-    └── ShareViewController.swift     # Full pipeline: fetch → extract → EPUB → send/save
-```
-
----
-
-## EPUB Pipeline (Deep Dive)
-
-The conversion pipeline runs entirely in memory with no temporary files:
-
-1. **Fetch** — `WebPageFetcher` downloads the HTML via `URLSession` with a Safari user-agent, encoding detection, and redirect following
-2. **Extract** — `ContentExtractor` (SwiftSoup) parses the DOM for article content using semantic selectors (`<article>`, `[role=main]`, `.post-content`, `.entry-content`, `.article-body`, `#content`, `main`, and more). If extraction fails (< 400 chars), falls back to `ReadabilityExtractor` (WKWebView + Readability.js). Twitter/X URLs use `TwitterExtractor` via the fxtwitter API
-3. **Sanitize** — `HTMLSanitizer` strips all scripts, styles, forms, media, images, SVGs, iframes, event handlers, and data attributes. Links are converted to plain text for a clean reading experience
-4. **Build** — `EPUBBuilder` assembles the EPUB 2.0 package in memory: `mimetype` (uncompressed), `META-INF/container.xml`, `content.opf`, `toc.ncx`, and one or more `chapter-N.xhtml` files. Long content is auto-split by `ChapterSplitter` at `<h2>` boundaries or every 50 paragraphs
-5. **Send** — The `Data` blob is uploaded via multipart/form-data POST to the device's upload endpoint, with real-time progress tracking
-
----
-
-## Content Extraction Strategy
-
-CrossX uses a tiered extraction approach to handle the widest range of web pages:
-
-| Tier | Extractor | Method | When |
-|------|-----------|--------|------|
-| **1** | `TwitterExtractor` | fxtwitter JSON API | Twitter/X status URLs |
-| **2** | `ContentExtractor` | SwiftSoup DOM parsing | All other URLs (primary) |
-| **3** | `ReadabilityExtractor` | WKWebView + Readability.js | Fallback when SwiftSoup extracts < 400 chars |
-
-The SwiftSoup extractor uses a priority list of CSS selectors to find article content:
-`article`, `[role=main]`, `.post-content`, `.entry-content`, `.article-body`, `#content`, `main`, and more.
-
-Metadata (title, author, description, language) is extracted from Open Graph tags, meta tags, and heading elements.
-
----
-
-## Design System
-
-CrossX uses a minimal design token system with four semantic colors:
-
-| Token | Color | Usage |
-|-------|-------|-------|
-| `AppColor.accent` | Teal | Primary actions, navigation, icons |
-| `AppColor.success` | Green | Successful operations, connected state |
-| `AppColor.error` | Red | Errors, destructive actions, disconnected state |
-| `AppColor.warning` | Orange | Warnings, pending states |
-
-The `AccentColor` asset is set to teal with light and dark mode variants. The UI uses iOS 26 / macOS 26 **Liquid Glass** modifiers (`.glassEffect()`) for a translucent, modern appearance.
 
 ---
 
@@ -418,32 +290,23 @@ Dependencies are managed via **Xcode's Swift Package Manager** integration. They
 ## Roadmap
 
 - [ ] **WallpaperX** — custom wallpaper upload and management for the X3
-- [ ] **Share Extension queue integration** — update the iOS Share Extension to use the queue system instead of temp file saves
+- [ ] **Share Extension queue integration** — update the iOS Share Extension to use the queue system
 - [ ] **File rename** — currently disabled; waiting for CrossPoint firmware API stabilization
 - [ ] **Image support in EPUBs** — optionally include images for richer e-books
 - [ ] **Batch conversion** — convert multiple URLs in one session
 - [ ] **Reading list integration** — import from Safari Reading List
-- [ ] **visionOS support** — deployment target is already set; UI needs spatial adaptation
-- [ ] **Localization** — multi-language support
 
 ---
 
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide, including:
-
-- Development setup and build commands
-- Code conventions and architecture rules
-- PR process and checklist
-- Common pitfalls to avoid
-
-Quick start:
+Contributions are welcome! 
 
 1. **Fork** the repository
 2. **Create a branch** (`git checkout -b feature/my-feature`)
-3. **Make your changes** — follow the conventions in [AGENTS.md](AGENTS.md)
+3. **Make your changes**
 4. **Build both platforms** — `xcodebuild` for iOS and macOS
-5. **Open a Pull Request** — the [PR template](.github/pull_request_template.md) will guide you
+5. **Open a Pull Request**
 
 ---
 
@@ -454,5 +317,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ---
 
 <p align="center">
-  Built for the <a href="https://Xteink.com">Xteink X3</a> e-reader community.
+  Built for the <a href="https://Xteink.com">Xteink X3</a> e-reader community.<br>
+  <sub>Lovingly vibecoded with <a href="https://blog.google/technology/google-deepmind/antigravity-ai-coding-agent/">Antigravity</a> 🚀</sub>
 </p>
